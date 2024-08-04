@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
   const [formData, setFormData] = useState({
     email: '',
     password: '',
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -29,10 +31,11 @@ const Login = () => {
 
     // Proceed with login logic
     alert('Login successful!');
-   
   };
 
-  
+  const handleSignUpClick = () => {
+    navigate('/');
+  };
 
   return (
     <div style={styles.container}>
@@ -59,7 +62,10 @@ const Login = () => {
         <div style={{ textAlign: 'center' }}>
           <button type="submit" style={styles.button}>SIGN IN</button>
           <h5 style={styles.text}>
-            New to debate now? <a href="/SignUp" style={styles.link}>Create one</a>
+            New?{' '}
+            <span style={styles.link} onClick={handleSignUpClick}>
+              Create one
+            </span>
           </h5>
           <a href="/Forgot" style={styles.link}>Forgot password?</a>
         </div>
@@ -74,7 +80,9 @@ const styles = {
     justifyContent: 'center',
     alignItems: 'center',
     height: '100vh',
-    background: '#333',
+    backgroundImage: 'url("https://tse3.mm.bing.net/th?id=OIP.Ih7xr4sewu26s6saMH_jYwHaEo&pid=Api&P=0&h=180")',
+    backgroundSize: 'cover',
+    backgroundPosition: 'center',
     position: 'fixed',
     top: 0,
     left: 0,
@@ -84,7 +92,7 @@ const styles = {
   form: {
     width: '300px',
     padding: '20px',
-    borderRadius: '25px',
+    borderRadius: '10px',
     boxShadow: '4px 5px 10px black',
     background: '#222',
     color: '#FFD700',
@@ -105,7 +113,7 @@ const styles = {
     padding: '8px',
     background: 'transparent',
     borderColor: '#FFD700',
-    borderRadius: '20px',
+    borderRadius: '10px',
     color: '#FFD700',
   },
   button: {
@@ -122,6 +130,7 @@ const styles = {
   },
   link: {
     color: '#FFD700',
+    cursor: 'pointer',
   },
 };
 

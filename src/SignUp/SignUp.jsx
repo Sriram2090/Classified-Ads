@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const SignUp = () => {
   const [formData, setFormData] = useState({
@@ -8,6 +9,8 @@ const SignUp = () => {
     password: '',
     confirmPassword: '',
   });
+
+  const navigate = useNavigate();
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -33,7 +36,9 @@ const SignUp = () => {
       return;
     }
 
+  
     alert('Signup successful!');
+    navigate('/login'); 
   };
 
   return (
@@ -92,7 +97,7 @@ const SignUp = () => {
         <div style={{ textAlign: 'center' }}>
           <button type="submit" style={styles.button}>Sign Up</button>
           <h5 style={styles.text}>
-            Already have an account? <a href="/SignIn" style={styles.link}>Sign in</a>
+            Already have an account? <a href="/login" style={styles.link}>Sign in</a>
           </h5>
         </div>
       </form>
@@ -155,7 +160,6 @@ const styles = {
   link: {
     color: '#FFD700',
   },
-  
 };
 
 export default SignUp;
