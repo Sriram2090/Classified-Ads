@@ -3,7 +3,9 @@ import 'boxicons/css/boxicons.min.css';
 import PostCarAd from '../PostAd/PostCarAd';
 import PostBikeAd from '../PostAd/PostBikeAd';
 import PostMobileAd from '../PostAd/PostMobileAd'; 
+import PostElectronicsAd from '../PostAd/PostElectronicsAd';
 import './SideBar.css'; 
+import PostFurnitureAd from '../PostAd/PostFurnitureAd';
 
 const SideBar = ({ navigateToHome }) => {
     const [selectedCategory, setSelectedCategory] = useState(null);
@@ -56,6 +58,13 @@ const SideBar = ({ navigateToHome }) => {
         } else if (selectedCategory === 'Electronics & Appliances') {
             if (selectedSubcategory === 'Home Appliances') {
                 return <PostElectronicsAd />;
+            }
+        }
+        else if(selectedCategory==='Home & Lifestyle')
+        {
+            if(selectedSubcategory==='Furniture')
+            {
+                return <PostFurnitureAd/>
             }
         }
         return <div className="form-placeholder"><p>Select the appropriate subcategory to post your ad.</p></div>;

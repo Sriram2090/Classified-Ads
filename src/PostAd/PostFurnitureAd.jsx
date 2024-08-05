@@ -1,14 +1,13 @@
 import React, { useState } from 'react';
 import './PostAd.css';
 
-const PostElectronicsAd = () => {
+const PostFurnitureAd = () => {
   const [formData, setFormData] = useState({
-    brand: '',
-    model: '',
-    year: '',
-    type: '', 
+    category: '',
+    material: '',
+    color: '',
+    dimensions: '',
     condition: '',
-    warranty: '',
     adTitle: '',
     description: '',
     price: '',
@@ -26,29 +25,37 @@ const PostElectronicsAd = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log('Electronics Ad Form data:', formData);
+    console.log('Furniture Ad Form data:', formData);
   };
 
   return (
     <div className='body2'>
       <main>
         <form onSubmit={handleSubmit}>
-          <h2>Post Ad</h2>
+          <h2>Post Furniture Ad</h2>
           <div className="form-group">
-            <label>Brand</label>
-            <input type="text" name="brand" value={formData.brand} onChange={handleChange} required />
+            <label>Category</label>
+            <select name="category" value={formData.category} onChange={handleChange} required>
+              <option value="">Select Category</option>
+              <option value="Sofa">Sofa</option>
+              <option value="Table">Table</option>
+              <option value="Chair">Chair</option>
+              <option value="Bed">Bed</option>
+              <option value="Cabinet">Cabinet</option>
+              <option value="Other">Other</option>
+            </select>
           </div>
           <div className="form-group">
-            <label>Model</label>
-            <input type="text" name="model" value={formData.model} onChange={handleChange} required />
+            <label>Material</label>
+            <input type="text" name="material" value={formData.material} onChange={handleChange} required />
           </div>
           <div className="form-group">
-            <label>Year</label>
-            <input type="number" name="year" value={formData.year} onChange={handleChange} required />
+            <label>Color</label>
+            <input type="text" name="color" value={formData.color} onChange={handleChange} required />
           </div>
           <div className="form-group">
-            <label>Type</label>
-            <input type="text" name="type" value={formData.type} onChange={handleChange} required />
+            <label>Dimensions</label>
+            <input type="text" name="dimensions" value={formData.dimensions} onChange={handleChange} required />
           </div>
           <div className="form-group">
             <label>Condition</label>
@@ -56,15 +63,6 @@ const PostElectronicsAd = () => {
               <option value="">Select Condition</option>
               <option value="New">New</option>
               <option value="Used">Used</option>
-              <option value="Refurbished">Refurbished</option>
-            </select>
-          </div>
-          <div className="form-group">
-            <label>Warranty</label>
-            <select name="warranty" value={formData.warranty} onChange={handleChange} required>
-              <option value="">Select Warranty</option>
-              <option value="Yes">Yes</option>
-              <option value="No">No</option>
             </select>
           </div>
           <div className="form-group">
@@ -90,4 +88,4 @@ const PostElectronicsAd = () => {
   );
 };
 
-export default PostElectronicsAd;
+export default PostFurnitureAd;
