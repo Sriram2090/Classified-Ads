@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import 'boxicons/css/boxicons.min.css';
 import PostCarAd from '../PostAd/PostCarAd';
 import PostBikeAd from '../PostAd/PostBikeAd';
-import PostMobileAd from '../PostAd/PostMobileAd'; // Import other form components
-import './SideBar.css'; // Import the CSS file
+import PostMobileAd from '../PostAd/PostMobileAd'; 
+import './SideBar.css'; 
 
 const SideBar = ({ navigateToHome }) => {
     const [selectedCategory, setSelectedCategory] = useState(null);
@@ -16,14 +16,14 @@ const SideBar = ({ navigateToHome }) => {
         { name: 'Mobiles & Tablets', icon: 'bx bxs-mobile', subcategories: ['Mobiles', 'Tablets'] },
         { name: 'Electronics & Appliances', icon: 'bx bxs-plug', subcategories: ['Home Appliances', 'Kitchen Appliances', 'Others'] },
         { name: 'Home & Lifestyle', icon: 'bx bxs-sofa', subcategories: ['Furniture', 'Home Decor', 'Gardening', 'Kitchenware'] },
-        { name: "If you can't find your category, Click here", icon: 'bx bx-search', subcategories: [] },
+        
     ];
 
     const handleCategoryClick = (category) => {
         setSelectedCategory(category);
         setSelectedSubcategory(null);
         setBackButtonClicked(false);
-        setSidebarOpen(false); // Close sidebar on category click
+        setSidebarOpen(false); 
     };
 
     const handleSubcategoryClick = (subcategory) => {
@@ -62,14 +62,14 @@ const SideBar = ({ navigateToHome }) => {
     };
 
     const toggleSidebar = () => {
-        setSidebarOpen(!sidebarOpen); // Toggle sidebar visibility
+        setSidebarOpen(!sidebarOpen); 
     };
 
     return (
         <div className="sidebar-container">
             <header className="header">
                 <div className="logo">AZ</div>
-                <button className="back-button" onClick={handleBackButtonClick}>Back</button>
+                    <button className="back-button" onClick={handleBackButtonClick}>Back</button>
                 <div className="hamburger-menu" onClick={toggleSidebar}>
                     <span></span>
                     <span></span>

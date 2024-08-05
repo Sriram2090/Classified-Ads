@@ -1,3 +1,6 @@
+*{
+    margin: 0;
+}
 .sidebar-container {
     display: flex;
     flex-direction: column;
@@ -36,7 +39,8 @@
     font-weight: bold;
     font-size: 15px;
     cursor: pointer;
-    transition: background-color 0.3s ease;
+    
+    
 }
 
 .back-button:hover {
@@ -46,7 +50,7 @@
 .content {
     display: flex;
     flex: 1;
-    margin-top: 70px; /* Adjust margin to account for fixed header height */
+    margin-top: 70px; 
 }
 
 .sidebar {
@@ -54,9 +58,9 @@
     background-color: black;
     color: white;
     position: fixed;
-    top: 70px; /* Below the fixed header */
+    top: 70px; 
     left: 0;
-    height: calc(100% - 70px); /* Full height minus the header height */
+    height: calc(100% - 70px); 
     padding-top: 20px;
     overflow-y: auto;
     box-shadow: 2px 0 5px rgba(0,0,0,0.1);
@@ -91,7 +95,7 @@
 }
 
 .main-content {
-    margin-left: 250px; /* To account for the sidebar width */
+    margin-left: 250px; 
     padding: 70px;
     flex: 1;
     overflow-y: auto;
@@ -142,7 +146,7 @@
 
     .content {
         flex-direction: column;
-        margin-top: 0; /* Reset margin-top for smaller screens */
+        margin-top: 0; 
     }
 
     .sidebar {

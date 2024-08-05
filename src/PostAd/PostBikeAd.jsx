@@ -32,10 +32,10 @@ const PostBikeAd = () => {
   };
 
   return (
-    <div>
+    <div className='body2'>
       <main>
         <form onSubmit={handleSubmit}>
-          <h2>Post Your Bike Ad</h2>
+          <h2>Post Ad</h2>
           <div className="form-group">
             <label>Brand</label>
             <input type="text" name="brand" value={formData.brand} onChange={handleChange} required />

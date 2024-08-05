@@ -1,11 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import SideBar from './SideBar/SideBar';
+
+import App from './App';
 
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
    
 
-    <SideBar/>
+    <App/>
   </React.StrictMode>
 );
