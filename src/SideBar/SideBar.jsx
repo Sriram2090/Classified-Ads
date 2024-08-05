@@ -9,6 +9,7 @@ const SideBar = ({ navigateToHome }) => {
     const [selectedCategory, setSelectedCategory] = useState(null);
     const [selectedSubcategory, setSelectedSubcategory] = useState(null);
     const [backButtonClicked, setBackButtonClicked] = useState(false);
+    const [sidebarOpen, setSidebarOpen] = useState(false); // State to control sidebar visibility
 
     const categories = [
         { name: 'Cars & Bikes', icon: 'bx bxs-car', subcategories: ['Bikes & Scooters', 'Cars', 'Commercial Vehicles', 'Spare Parts - Accessories', 'Other Vehicles'] },
@@ -22,6 +23,7 @@ const SideBar = ({ navigateToHome }) => {
         setSelectedCategory(category);
         setSelectedSubcategory(null);
         setBackButtonClicked(false);
+        setSidebarOpen(false); // Close sidebar on category click
     };
 
     const handleSubcategoryClick = (subcategory) => {
@@ -59,37 +61,44 @@ const SideBar = ({ navigateToHome }) => {
         return <div className="form-placeholder"><p>Select the appropriate subcategory to post your ad.</p></div>;
     };
 
+    const toggleSidebar = () => {
+        setSidebarOpen(!sidebarOpen); // Toggle sidebar visibility
+    };
+
     return (
         <div className="sidebar-container">
             <header className="header">
-                <div>AZ</div>
+                <div className="logo">AZ</div>
                 <button className="back-button" onClick={handleBackButtonClick}>Back</button>
+                <div className="hamburger-menu" onClick={toggleSidebar}>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
             </header>
-            <div className="content">
-                <div className="sidebar">
-                    <ul className="category-list">
-                        {categories.map((category, index) => (
-                            <li key={index} className={`category-item ${selectedCategory === category.name ? 'selected' : ''}`} onClick={() => handleCategoryClick(category.name)}>
-                                <i className={category.icon}></i> {category.name}
-                            </li>
-                        ))}
-                    </ul>
-                </div>
-                <div className="main-content">
-                    <h1>Post Ad</h1>
-                    {selectedCategory && !selectedSubcategory ? (
-                        <div className="subcategory-list-container">
-                            <h2>Select a subcategory</h2>
-                            <ul className="subcategory-list">
-                                {categories.find(category => category.name === selectedCategory).subcategories.map((subcategory, index) => (
-                                    <li key={index} className="subcategory-item" onClick={() => handleSubcategoryClick(subcategory)}>{subcategory}</li>
-                                ))}
-                            </ul>
-                        </div>
-                    ) : (
-                        renderForm()
-                    )}
-                </div>
+            <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
+                <ul className="category-list">
+                    {categories.map((category, index) => (
+                        <li key={index} className={`category-item ${selectedCategory === category.name ? 'selected' : ''}`} onClick={() => handleCategoryClick(category.name)}>
+                            <i className={category.icon}></i> {category.name}
+                        </li>
+                    ))}
+                </ul>
+            </div>
+            <div className="main-content">
+                <h1>Post Ad</h1>
+                {selectedCategory && !selectedSubcategory ? (
+                    <div className="subcategory-list-container">
+                        <h2>Select a subcategory</h2>
+                        <ul className="subcategory-list">
+                            {categories.find(category => category.name === selectedCategory).subcategories.map((subcategory, index) => (
+                                <li key={index} className="subcategory-item" onClick={() => handleSubcategoryClick(subcategory)}>{subcategory}</li>
+                            ))}
+                        </ul>
+                    </div>
+                ) : (
+                    renderForm()
+                )}
             </div>
         </div>
     );
