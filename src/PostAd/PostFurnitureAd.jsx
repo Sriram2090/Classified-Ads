@@ -29,9 +29,9 @@ const PostFurnitureAd = () => {
   };
 
   return (
-    <div className='body2'>
+    <div className='body23'>
       <main>
-        <form onSubmit={handleSubmit}>
+        <form className='form23' onSubmit={handleSubmit}>
           <h2>Post Furniture Ad</h2>
           <div className="form-group">
             <label>Category</label>

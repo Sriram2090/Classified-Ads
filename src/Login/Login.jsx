@@ -31,10 +31,11 @@ const Login = () => {
 
     // Proceed with login logic
     alert('Login successful!');
+    navigate('/'); // Redirect to home page after successful login
   };
 
   const handleSignUpClick = () => {
-    navigate('/');
+    navigate('/'); // Assuming you have a signup route
   };
 
   return (

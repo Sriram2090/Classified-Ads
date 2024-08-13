@@ -8,7 +8,7 @@
     position: relative;
 }
 
-.header {
+.head23 {
     background-color: black;
     color: #ff4d00;
     padding: 20px 80px;
@@ -22,14 +22,14 @@
     width: 100%;
 }
 
-.logo {
+.logo23 {
     position: absolute;
     left: 20px;
     top: 50%;
     transform: translateY(-50%);
 }
 
-.back-button {
+.back-button23 {
     width: 100px;
     height: 30px;
     background-color: #ff4d00;
@@ -43,7 +43,7 @@
     
 }
 
-.back-button:hover {
+.back-button23:hover {
     background-color: #e64300;
 }
 
@@ -93,10 +93,18 @@
 .category-item:hover {
     background-color: #ff4d00;
 }
+.img-post
+{
+    width: 600px;
+   margin-left: 300px;
+   height: 400px;
+   
+}
 
-.main-content {
+.main-content23 {
     margin-left: 250px; 
     padding: 70px;
+    margin-top: 20px;
     flex: 1;
     overflow-y: auto;
     background-color: #f3f1f1;
@@ -104,9 +112,15 @@
 }
 
 .form-placeholder {
+    margin-top: 20px;
     border: 1px solid #ddd;
-    padding: 20px;
-    background-color: #f9f9f9;
+    padding: 0px;
+    
+    background-color: white;
+    height: 71vh;
+}
+.form-placeholder p{
+    margin: 50px;
 }
 
 .subcategory-list-container {
@@ -133,12 +147,12 @@
 }
 
 @media (max-width: 768px) {
-    .header {
+    .head23 {
         font-size: 24px;
         padding: 20px;
     }
 
-    .back-button {
+    .back-button23 {
         font-size: 12px;
         width: 80px;
         height: 25px;
@@ -157,7 +171,7 @@
         padding-top: 0;
     }
 
-    .main-content {
+    .main-content23 {
         margin-left: 0;
         padding: 10px;
     }
@@ -168,12 +182,12 @@
 }
 
 @media (max-width: 480px) {
-    .header {
+    .head23 {
         font-size: 18px;
         padding: 10px 20px;
     }
 
-    .back-button {
+    .back-button23 {
         font-size: 10px;
         width: 60px;
         height: 20px;

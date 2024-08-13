@@ -14,9 +14,9 @@ const SideBar = ({ navigateToHome }) => {
     const [sidebarOpen, setSidebarOpen] = useState(false); // State to control sidebar visibility
 
     const categories = [
-        { name: 'Cars & Bikes', icon: 'bx bxs-car', subcategories: ['Bikes & Scooters', 'Cars', 'Commercial Vehicles', 'Spare Parts - Accessories', 'Other Vehicles'] },
+        { name: 'Cars & Bikes', icon: 'bx bxs-car', subcategories: ['Bikes & Scooters', 'Cars', ] },
         { name: 'Mobiles & Tablets', icon: 'bx bxs-mobile', subcategories: ['Mobiles', 'Tablets'] },
-        { name: 'Electronics & Appliances', icon: 'bx bxs-plug', subcategories: ['Home Appliances', 'Kitchen Appliances', 'Others'] },
+        { name: 'Electronics & Appliances', icon: 'bx bxs-plug', subcategories: ['Home Appliances', 'Kitchen Appliances',] },
         { name: 'Home & Lifestyle', icon: 'bx bxs-sofa', subcategories: ['Furniture', 'Home Decor', 'Gardening', 'Kitchenware'] },
         
     ];
@@ -67,7 +67,9 @@ const SideBar = ({ navigateToHome }) => {
                 return <PostFurnitureAd/>
             }
         }
-        return <div className="form-placeholder"><p>Select the appropriate subcategory to post your ad.</p></div>;
+        return <div className="form-placeholder"><p>Select the appropriate subcategory to post your ad.</p>
+         <img className='img-post'
+         src='https://images.ctfassets.net/2yd1b0rk61ek/10Wn9tj66w3iyrdkyiO4FV/bc8ba2617988ed55d34857f47e0e4130/apple_herobanner_en.jpg'></img></div>;
     };
 
     const toggleSidebar = () => {
@@ -76,14 +78,10 @@ const SideBar = ({ navigateToHome }) => {
 
     return (
         <div className="sidebar-container">
-            <header className="header">
-                <div className="logo">AZ</div>
-                    <button className="back-button" onClick={handleBackButtonClick}>Back</button>
-                <div className="hamburger-menu" onClick={toggleSidebar}>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
+            <header className="head23">
+                <div className="logo23">AZ</div>
+                    <button className="back-button23" onClick={handleBackButtonClick}>Back</button>
+                
             </header>
             <div className={`sidebar ${sidebarOpen ? 'open' : ''}`}>
                 <ul className="category-list">
@@ -94,20 +92,25 @@ const SideBar = ({ navigateToHome }) => {
                     ))}
                 </ul>
             </div>
-            <div className="main-content">
+            <div className="main-content23">
                 <h1>Post Ad</h1>
                 {selectedCategory && !selectedSubcategory ? (
                     <div className="subcategory-list-container">
                         <h2>Select a subcategory</h2>
+                           
                         <ul className="subcategory-list">
                             {categories.find(category => category.name === selectedCategory).subcategories.map((subcategory, index) => (
                                 <li key={index} className="subcategory-item" onClick={() => handleSubcategoryClick(subcategory)}>{subcategory}</li>
                             ))}
                         </ul>
+                        <img className='img-post' src='https://images.ctfassets.net/2yd1b0rk61ek/10Wn9tj66w3iyrdkyiO4FV/bc8ba2617988ed55d34857f47e0e4130/apple_herobanner_en.jpg'></img>
                     </div>
+                    
                 ) : (
                     renderForm()
                 )}
+                <div>
+                </div>
             </div>
         </div>
     );

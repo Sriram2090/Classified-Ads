@@ -98,7 +98,7 @@ const SignUp = () => {
         <div style={styles.buttonContainer}>
           <button type="submit" style={styles.button}>Sign Up</button>
           <h5 style={styles.text}>
-            Already have an account? <a href="/login" style={styles.link}>Sign in</a>
+            Already have an account? <a href="/side" style={styles.link}>Sign in</a>
           </h5>
         </div>
       </form>
